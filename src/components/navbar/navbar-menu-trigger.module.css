@@ -1,0 +1,50 @@
+.navbarMenuTrigger span {
+  &:nth-child(1) {
+    top: 16px;
+    transition:
+      top 240ms ease 240ms,
+      transform 240ms ease;
+  }
+
+  &:nth-child(2) {
+    top: 23px;
+    opacity: 1;
+    transition: opacity 0s ease 240ms;
+  }
+
+  &:nth-child(3) {
+    bottom: 16px;
+    transition:
+      bottom 240ms ease 240ms,
+      transform 240ms ease;
+  }
+}
+
+.menuOpen span {
+  &:nth-child(1) {
+    top: 23px;
+    transform: rotate(-45deg);
+    transition:
+      top 240ms ease,
+      transform 240ms ease 240ms;
+  }
+
+  &:nth-child(2) {
+    opacity: 0;
+  }
+
+  &:nth-child(3) {
+    bottom: 23px;
+    transform: rotate(45deg);
+    transition:
+      bottom 240ms ease,
+      transform 240ms ease 240ms;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .navbarMenuTrigger span,
+  .menuOpen span {
+    transition: none !important;
+  }
+}

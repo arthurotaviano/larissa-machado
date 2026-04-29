@@ -1,0 +1,17 @@
+.aboutColumns {
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+
+  @media (width < 64rem) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  @media not (min-width: 48rem) {
+    grid-template-columns: auto;
+    grid-template-rows: none;
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
+}

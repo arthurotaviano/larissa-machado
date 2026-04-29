@@ -1,0 +1,21 @@
+.projectModal {
+  z-index: -1;
+  display: none;
+
+  &:global(.modal-open) {
+    z-index: 11000;
+    display: block;
+  }
+
+  .modalBody > * {
+    margin-block: 1rem;
+  }
+
+  .modalButton {
+    cursor: auto;
+  }
+
+  &:global(.modal-open) .modalButton {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,7 @@
+.aboutLogos ul {
+  grid-template-columns: repeat(2, minmax(auto, 90px));
+
+  @media (width < 64rem) {
+    grid-template-columns: repeat(3, minmax(auto, 90px));
+  }
+}

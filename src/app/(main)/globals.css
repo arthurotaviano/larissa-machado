@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: var(--font-noto-sans);
+}
+
+@layer base {
+  body {
+    @apply bg-white text-neutral-950 font-sans;
+  }
+}
