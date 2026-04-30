@@ -3,7 +3,6 @@
 import { buildFileUrl, client, urlFor } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
 import type { Metadata } from 'next'
-import styles from './project.module.css'
 
 interface ProjectPageProps {
   params: Promise<{
@@ -70,7 +69,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <img className='block w-full h-auto' src={urlFor(project.image)} alt={`${project.title} - imagem de apresentação`} />
       </picture>
       <div className='mx-auto mt-5 md:mt-10 px-5'>
-        <div className={`mx-auto w-full md:w-142 lg:w-206 ${styles.projectBody}`}>
+        <div className='flex flex-col gap-4 mx-auto w-full md:w-142 lg:w-206'>
           <h1 className='text-2xl md:text-3xl lg:text-4xl font-extrabold'>{project.title}</h1>
           <PortableText value={project.content} components={components} />
         </div>
