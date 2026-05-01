@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import imageUrlBuilder from '@sanity/image-url'
+import { createImageUrlBuilder } from '@sanity/image-url'
 import { createClient } from 'next-sanity'
 
 export const client = createClient({
@@ -9,7 +9,7 @@ export const client = createClient({
   useCdn: false,
 })
 
-const builder = imageUrlBuilder(client)
+const builder = createImageUrlBuilder(client)
 
 export function urlFor(source: any) {
   return builder.image(source).url()

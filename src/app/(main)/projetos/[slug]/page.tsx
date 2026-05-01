@@ -53,9 +53,17 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const { slug } = await params
   const project: ProjectProps = await getProject(slug)
 
+  const title = `${project.title} - Larissa Machado`
+  const description = `Saiba mais sobre o projeto criado para ${project.title}, por Larissa Machado.`
+  const url = `/projetos/${slug}`
+
   return {
-    title: `${project.title} - Larissa Machado`,
-    description: `Saiba mais sobre o projeto ${project.title}`,
+    title,
+    description,
+    openGraph: {
+      url,
+      images: ['/opengraph-image.png'],
+    },
   }
 }
 
