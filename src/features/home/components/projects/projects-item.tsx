@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import { useModal } from './useModal'
+import { useProjectModal } from '../../hooks/useProjectModal'
 
 interface ProjectsItemProps {
   url: string
@@ -12,11 +12,18 @@ interface ProjectsItemProps {
 }
 
 export function ProjectsItem({ url, label, children, modal }: ProjectsItemProps) {
-  const { triggerRef, containerRef, handleTriggerClick } = useModal()
+  const { triggerRef, containerRef, handleTriggerClick } = useProjectModal()
 
   return (
     <li ref={containerRef}>
-      <Link className='relative block w-full h-full' href={`projetos/${url}`} aria-label={label} data-modal-trigger ref={triggerRef} onClick={handleTriggerClick}>
+      <Link
+        className='relative block w-full h-full'
+        href={`projetos/${url}`}
+        aria-label={label}
+        data-modal-trigger
+        ref={triggerRef}
+        onClick={handleTriggerClick}
+      >
         {children}
       </Link>
       {modal}

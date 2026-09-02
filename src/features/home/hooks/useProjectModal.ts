@@ -2,15 +2,28 @@
 
 import { useCallback, useEffect, useRef } from 'react'
 
-const FOCUSABLE_SELECTORS = ['a[href]', 'button:not([disabled])', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', '[tabindex]:not([tabindex="-1"])'].join(', ')
+const FOCUSABLE_SELECTORS = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(', ')
 
-export function useModal() {
+export function useProjectModal() {
   const triggerRef = useRef<HTMLAnchorElement | null>(null)
   const containerRef = useRef<HTMLLIElement | null>(null)
 
-  const getModal = useCallback(() => containerRef.current?.querySelector<HTMLElement>('[data-modal-component]') ?? null, [])
+  const getModal = useCallback(
+    () => containerRef.current?.querySelector<HTMLElement>('[data-modal-component]') ?? null,
+    []
+  )
 
-  const getDialog = useCallback(() => getModal()?.querySelector<HTMLElement>('[role="dialog"]') ?? null, [getModal])
+  const getDialog = useCallback(
+    () => getModal()?.querySelector<HTMLElement>('[role="dialog"]') ?? null,
+    [getModal]
+  )
 
   const getFocusableElements = useCallback(() => {
     const dialog = getDialog()
