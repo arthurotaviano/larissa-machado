@@ -4,14 +4,14 @@ import Link from 'next/link'
 import { ReactNode } from 'react'
 import { useProjectModal } from '../../hooks/useProjectModal'
 
-interface ProjectsItemProps {
+type ItemProps = {
   url: string
   label: string
   children: ReactNode
   modal: ReactNode
 }
 
-export function ProjectsItem({ url, label, children, modal }: ProjectsItemProps) {
+export function ProjectsItem({ url, label, children, modal }: ItemProps) {
   const { triggerRef, containerRef, handleTriggerClick } = useProjectModal()
 
   return (

@@ -4,13 +4,13 @@ import { buildFileUrl, client, urlFor } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
 import type { Metadata } from 'next'
 
-interface ProjectPageProps {
+type PageProps = {
   params: Promise<{
     slug: string
   }>
 }
 
-interface ProjectProps {
+type ProjectProps = {
   title: string
   currentSlug: string
   image: string
@@ -49,7 +49,7 @@ async function getProject(slug: string) {
   return await client.fetch(query, { slug })
 }
 
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
   const project: ProjectProps = await getProject(slug)
 
@@ -67,14 +67,18 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params
   const project: ProjectProps = await getProject(slug)
 
   return (
     <article className='pb-15 md:pb-20 lg:pb-25'>
       <picture>
-        <img className='block w-full h-auto' src={urlFor(project.image)} alt={`${project.title} - imagem de apresentação`} />
+        <img
+          className='block w-full h-auto'
+          src={urlFor(project.image)}
+          alt={`${project.title} - imagem de apresentação`}
+        />
       </picture>
       <div className='mx-auto mt-5 md:mt-10 px-5'>
         <div className='flex flex-col gap-4 mx-auto w-full md:w-142 lg:w-206'>

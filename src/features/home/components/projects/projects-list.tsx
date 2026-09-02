@@ -7,7 +7,7 @@ import { ProjectText } from './project-text'
 import { ProjectThumbnail } from './project-thumbnail'
 import { ProjectsItem } from './projects-item'
 
-interface ProjectsProps {
+type ProjectProps = {
   title: string
   currentSlug: string
   image: string
@@ -49,14 +49,29 @@ async function getProjects() {
 }
 
 export async function ProjectsList() {
-  const projects: ProjectsProps[] = await getProjects()
+  const projects: ProjectProps[] = await getProjects()
 
   return (
     <ul className='flex flex-col gap-5 md:gap-10 mx-auto max-w-360' aria-label='Projetos'>
       {projects.map(project => (
-        <ProjectsItem url={project.currentSlug} label={project.title} modal={<ProjectModal image={urlFor(project.image)} id={project.currentSlug} title={project.title} content={<PortableText value={project.content} components={components} />} />} key={project.currentSlug}>
+        <ProjectsItem
+          url={project.currentSlug}
+          label={project.title}
+          modal={
+            <ProjectModal
+              image={urlFor(project.image)}
+              id={project.currentSlug}
+              title={project.title}
+              content={<PortableText value={project.content} components={components} />}
+            />
+          }
+          key={project.currentSlug}
+        >
           <ProjectText title={project.title} />
-          <ProjectThumbnail url={urlFor(project.image)} description={`${project.title} - imagem de apresentação`} />
+          <ProjectThumbnail
+            url={urlFor(project.image)}
+            description={`${project.title} - imagem de apresentação`}
+          />
         </ProjectsItem>
       ))}
     </ul>

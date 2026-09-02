@@ -10,7 +10,7 @@ import { AboutLogos } from './about-logos'
 import { AboutText } from './about-text'
 import styles from './about.module.css'
 
-interface AboutInfoProps {
+type InfoProps = {
   text: any
   email: string
   photo: string
@@ -19,14 +19,14 @@ interface AboutInfoProps {
   linkedin: string
 }
 
-interface ClientsProps {
+type ClientProps = {
   name: string
   logo: any
 }
 
-interface AboutProps {
-  aboutInfo: AboutInfoProps
-  clients: ClientsProps[]
+type AboutProps = {
+  aboutInfo: InfoProps
+  clients: ClientProps[]
 }
 
 async function getAboutInfo() {
