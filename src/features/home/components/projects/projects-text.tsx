@@ -1,7 +1,7 @@
 import { Plus } from 'lucide-react'
-import styles from './text.module.css'
+import styles from './projects-text.module.css'
 
-export function Text({ title }: { title: string }) {
+export function ProjectsText({ title }: { title: string }) {
   return (
     <div
       className={`absolute top-0 left-0 z-2 whitespace-nowrap overflow-hidden flex justify-between items-end rounded-[18px] md:rounded-4xl p-3 md:p-5 w-full h-full ${styles.text}`}

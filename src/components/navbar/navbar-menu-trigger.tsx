@@ -1,11 +1,11 @@
-import styles from './menu-trigger.module.css'
+import styles from './navbar-menu-trigger.module.css'
 
-type TriggerProps = {
+type NavbarTriggerProps = {
   isOpen: boolean
   onToggle: () => void
 }
 
-export function MenuTrigger({ isOpen, onToggle }: TriggerProps) {
+export function NavbarMenuTrigger({ isOpen, onToggle }: NavbarTriggerProps) {
   return (
     <button
       className={[

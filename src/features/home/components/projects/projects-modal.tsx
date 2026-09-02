@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { X } from 'lucide-react'
-import styles from './modal.module.css'
+import styles from './projects-modal.module.css'
 
-type ModalProps = {
+type ProjectsModalProps = {
   id: string
   image: string
   title: string
   content: any
 }
 
-export function Modal({ id, image, title, content }: ModalProps) {
+export function ProjectsModal({ id, image, title, content }: ProjectsModalProps) {
   return (
     <div
       className={`fixed top-0 right-0 bottom-0 left-0 overflow-auto bg-[rgba(0,0,0,.48)] backdrop-blur-[20px] ${styles.modal}`}

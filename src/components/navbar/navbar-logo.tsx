@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { Logo as LMLogo } from '../logo'
+import { Logo } from '../logo'
 
-export function Logo({ isOpen }: { isOpen: boolean }) {
+export function NavbarLogo({ isOpen }: { isOpen: boolean }) {
   return (
     <div
       className='flex flex-col justify-center items-start h-20 md:h-25'
@@ -12,7 +12,7 @@ export function Logo({ isOpen }: { isOpen: boolean }) {
         href='/'
         {...(isOpen && { tabIndex: -1 })}
       >
-        <LMLogo className='block w-41 md:w-61.5 h-10 md:h-15 fill-white' aria-hidden='true' />
+        <Logo className='block w-41 md:w-61.5 h-10 md:h-15 fill-white' aria-hidden='true' />
         <span className='sr-only'>Larissa Machado</span>
       </Link>
     </div>

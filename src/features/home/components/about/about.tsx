@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { client, urlFor } from '@/lib/sanity'
+import { AboutContactButton } from './about-contact-button'
+import { AboutCourses } from './about-courses'
+import { AboutExperience } from './about-experience'
+import { AboutImage } from './about-image'
+import { AboutLinkedInButton } from './about-linkedin-button'
+import { AboutLogo } from './about-logo'
+import { AboutLogos } from './about-logos'
+import { AboutText } from './about-text'
 import styles from './about.module.css'
-import { ContactButton } from './contact-button'
-import { Courses } from './courses'
-import { Experience } from './experience'
-import { Image as AboutImage } from './image'
-import { LinkedInButton } from './linkedin-button'
-import { Logo } from './logo'
-import { Logos } from './logos'
-import { Text } from './text'
 
 type InfoProps = {
   text: any
@@ -46,20 +46,20 @@ export async function About() {
         <h2 className='sr-only'>Sobre</h2>
         <div className={`grid gap-10 ${styles.columns}`}>
           <div>
-            <Logo />
-            <Text content={aboutInfo.text} />
-            <ContactButton address={aboutInfo.email} />
+            <AboutLogo />
+            <AboutText content={aboutInfo.text} />
+            <AboutContactButton address={aboutInfo.email} />
           </div>
           <div>
             <AboutImage url={urlFor(aboutInfo.photo)} />
           </div>
           <div>
-            <Experience content={aboutInfo.experience} />
+            <AboutExperience content={aboutInfo.experience} />
           </div>
           <div>
-            <Courses content={aboutInfo.courses} />
-            <LinkedInButton url={aboutInfo.linkedin} />
-            <Logos clients={clients} />
+            <AboutCourses content={aboutInfo.courses} />
+            <AboutLinkedInButton url={aboutInfo.linkedin} />
+            <AboutLogos clients={clients} />
           </div>
         </div>
       </div>

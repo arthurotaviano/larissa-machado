@@ -2,17 +2,17 @@
 
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import { useModal } from '../../hooks/useModal'
+import { useProjectsModal } from './projects.hooks'
 
-type ItemProps = {
+type ProjectsItemsProps = {
   url: string
   label: string
   children: ReactNode
   modal: ReactNode
 }
 
-export function Item({ url, label, children, modal }: ItemProps) {
-  const { triggerRef, containerRef, handleTriggerClick } = useModal()
+export function ProjectsItem({ url, label, children, modal }: ProjectsItemsProps) {
+  const { triggerRef, containerRef, handleTriggerClick } = useProjectsModal()
 
   return (
     <li ref={containerRef}>

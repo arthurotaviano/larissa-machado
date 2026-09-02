@@ -1,11 +1,11 @@
-import styles from './thumbnail.module.css'
+import styles from './projects-thumbnail.module.css'
 
-type ThumbnailProps = {
+type ProjectsThumbnailProps = {
   url: string
   description: string
 }
 
-export function Thumbnail({ url, description }: ThumbnailProps) {
+export function ProjectsThumbnail({ url, description }: ProjectsThumbnailProps) {
   return (
     <div
       className={`relative z-1 overflow-hidden rounded-[18px] md:rounded-4xl w-full h-auto pb-[56.25%] ${styles.thumbnail}`}

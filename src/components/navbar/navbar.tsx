@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Logo } from './logo'
-import { Menu } from './menu'
-import { MenuTrigger } from './menu-trigger'
-import styles from './menu.module.css'
+import { NavbarLogo } from './navbar-logo'
+import { NavbarMenu } from './navbar-menu'
+import { NavbarMenuTrigger } from './navbar-menu-trigger'
+import styles from './navbar-menu.module.css'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -103,9 +103,9 @@ export function Navbar() {
           className='relative mx-auto px-5'
           {...(isOpen && { role: 'dialog', 'aria-modal': true, 'aria-label': 'Menu' })}
         >
-          <Logo isOpen={isOpen} />
-          <Menu isOpen={isOpen} onClose={closeMenu} />
-          <MenuTrigger onToggle={handleMenuToggle} isOpen={isOpen} />
+          <NavbarLogo isOpen={isOpen} />
+          <NavbarMenu isOpen={isOpen} onClose={closeMenu} />
+          <NavbarMenuTrigger onToggle={handleMenuToggle} isOpen={isOpen} />
         </div>
       </nav>
       <div className='h-20 md:h-25'></div>

@@ -1,4 +1,4 @@
-export function Image({ url }: { url: string }) {
+export function AboutImage({ url }: { url: string }) {
   return (
     <picture className='block'>
       <img

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { PortableText } from '@portabletext/react'
 
-export function Courses({ content }: { content: any }) {
+export function AboutCourses({ content }: { content: any }) {
   return (
     <div className='mb-5 md:mb-10'>
       <h3 className='text-xl font-bold'>Formação</h3>

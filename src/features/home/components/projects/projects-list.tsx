@@ -2,12 +2,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { buildFileUrl, client, urlFor } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
-import { Item } from './item'
-import { Modal } from './modal'
-import { Text } from './text'
-import { Thumbnail } from './thumbnail'
+import { ProjectsItem } from './projects-item'
+import { ProjectsModal } from './projects-modal'
+import { ProjectsText } from './projects-text'
+import { ProjectsThumbnail } from './projects-thumbnail'
 
-type ProjectProps = {
+type ProjectsProjectProps = {
   title: string
   currentSlug: string
   image: string
@@ -48,17 +48,17 @@ async function getProjects() {
   return projects
 }
 
-export async function List() {
-  const projects: ProjectProps[] = await getProjects()
+export async function ProjectsList() {
+  const projects: ProjectsProjectProps[] = await getProjects()
 
   return (
     <ul className='flex flex-col gap-5 md:gap-10 mx-auto max-w-360' aria-label='Projetos'>
       {projects.map(project => (
-        <Item
+        <ProjectsItem
           url={project.currentSlug}
           label={project.title}
           modal={
-            <Modal
+            <ProjectsModal
               image={urlFor(project.image)}
               id={project.currentSlug}
               title={project.title}
@@ -67,12 +67,12 @@ export async function List() {
           }
           key={project.currentSlug}
         >
-          <Text title={project.title} />
-          <Thumbnail
+          <ProjectsText title={project.title} />
+          <ProjectsThumbnail
             url={urlFor(project.image)}
             description={`${project.title} - imagem de apresentação`}
           />
-        </Item>
+        </ProjectsItem>
       ))}
     </ul>
   )

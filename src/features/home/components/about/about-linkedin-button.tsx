@@ -1,6 +1,6 @@
 import { FaLinkedinIn } from 'react-icons/fa'
 
-export function LinkedInButton({ url }: { url: string }) {
+export function AboutLinkedInButton({ url }: { url: string }) {
   return (
     <a
       className='inline-flex justify-center items-center gap-2 whitespace-nowrap rounded-lg py-3 px-8 bg-neutral-950 text-white text-center font-bold'
