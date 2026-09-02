@@ -10,7 +10,7 @@ export function MenuTrigger({ isOpen, onToggle }: TriggerProps) {
     <button
       className={[
         'absolute top-4 md:top-6.5 right-2 w-12 h-12 cursor-pointer',
-        styles.navbarMenuTrigger,
+        styles.menuTrigger,
         isOpen && styles.menuOpen,
       ]
         .filter(Boolean)

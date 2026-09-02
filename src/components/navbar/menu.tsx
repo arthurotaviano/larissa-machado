@@ -14,7 +14,7 @@ const links = [
 export function Menu({ isOpen, onClose }: MenuProps) {
   return (
     <ul
-      className={`absolute top-20 md:top-25 right-0 left-0 flex flex-col justify-center px-5 w-full h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] bg-neutral-950 text-center ${styles.navbarMenu}`}
+      className={`absolute top-20 md:top-25 right-0 left-0 flex flex-col justify-center px-5 w-full h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] bg-neutral-950 text-center ${styles.menu}`}
       id='navbar-menu'
       aria-hidden={isOpen ? 'false' : 'true'}
     >

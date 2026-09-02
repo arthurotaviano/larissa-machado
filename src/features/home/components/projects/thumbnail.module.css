@@ -1,4 +1,4 @@
-.projectThumbnail .projectThumbnailImage {
+.thumbnail .thumbnailImage {
   transition: transform 480ms ease;
 
   a:hover & {
@@ -7,12 +7,12 @@
 }
 
 @media (prefers-reduced-motion) {
-  .projectThumbnail .projectThumbnailImage,
-  a:hover .projectThumbnail .projectThumbnailImage {
+  .thumbnail .thumbnailImage,
+  a:hover .thumbnail .thumbnailImage {
     transition: none;
   }
 
-  a:hover .projectThumbnail .projectThumbnailImage {
+  a:hover .thumbnail .thumbnailImage {
     transform: none;
   }
 }

@@ -44,7 +44,7 @@ export async function About() {
     <section className='py-15 md:py-20 lg:py-25' id='section-about'>
       <div className='mx-auto px-5'>
         <h2 className='sr-only'>Sobre</h2>
-        <div className={`grid gap-10 ${styles.aboutColumns}`}>
+        <div className={`grid gap-10 ${styles.columns}`}>
           <div>
             <Logo />
             <Text content={aboutInfo.text} />

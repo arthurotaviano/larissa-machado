@@ -1,4 +1,4 @@
-.navbarNoscroll {
+.noscroll {
   overscroll-behavior: none;
   margin-block-start: 0 !important;
 
@@ -10,7 +10,7 @@
   }
 }
 
-.navbarMenu {
+.menu {
   visibility: hidden;
   opacity: 0;
   overflow-y: hidden;
@@ -59,16 +59,16 @@
     }
   }
 
-  .navbarAnimating & {
+  .animating & {
     overflow: hidden !important;
   }
 }
 
 @media (prefers-reduced-motion) {
-  .navbarMenu,
-  .menuOpen .navbarMenu,
-  .navbarMenu li,
-  .menuOpen .navbarMenu li {
+  .menu,
+  .menuOpen .menu,
+  .menu li,
+  .menuOpen .menu li {
     transition: none !important;
   }
 }

@@ -9,7 +9,7 @@ type ClientProps = {
 
 export function Logos({ clients }: { clients: ClientProps[] }) {
   return (
-    <div className={`mt-5 md:mt-10 ${styles.aboutLogos}`}>
+    <div className={`mt-5 md:mt-10 ${styles.logos}`}>
       <h3 className='sr-only'>Alguns Clientes</h3>
       <ul className='grid gap-5'>
         {clients.map(client => (

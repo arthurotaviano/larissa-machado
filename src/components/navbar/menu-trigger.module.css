@@ -1,4 +1,4 @@
-.navbarMenuTrigger span {
+.menuTrigger span {
   &:nth-child(1) {
     top: 16px;
     transition:
@@ -43,7 +43,7 @@
 }
 
 @media (prefers-reduced-motion) {
-  .navbarMenuTrigger span,
+  .menuTrigger span,
   .menuOpen span {
     transition: none !important;
   }

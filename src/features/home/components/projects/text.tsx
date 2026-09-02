@@ -4,7 +4,7 @@ import styles from './text.module.css'
 export function Text({ title }: { title: string }) {
   return (
     <div
-      className={`absolute top-0 left-0 z-2 whitespace-nowrap overflow-hidden flex justify-between items-end rounded-[18px] md:rounded-4xl p-3 md:p-5 w-full h-full ${styles.projectText}`}
+      className={`absolute top-0 left-0 z-2 whitespace-nowrap overflow-hidden flex justify-between items-end rounded-[18px] md:rounded-4xl p-3 md:p-5 w-full h-full ${styles.text}`}
       aria-hidden='true'
     >
       <h3 className='relative z-2 text-xl md:text-2xl lg:text-3xl font-bold'>{title}</h3>

@@ -1,4 +1,4 @@
-.aboutLogos ul {
+.logos ul {
   grid-template-columns: repeat(2, minmax(auto, 90px));
 
   @media (width < 64rem) {

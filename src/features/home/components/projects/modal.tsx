@@ -12,7 +12,7 @@ type ModalProps = {
 export function Modal({ id, image, title, content }: ModalProps) {
   return (
     <div
-      className={`fixed top-0 right-0 bottom-0 left-0 overflow-auto bg-[rgba(0,0,0,.48)] backdrop-blur-[20px] ${styles.projectModal}`}
+      className={`fixed top-0 right-0 bottom-0 left-0 overflow-auto bg-[rgba(0,0,0,.48)] backdrop-blur-[20px] ${styles.modal}`}
       data-modal-component
       data-modal-close
     >

@@ -1,4 +1,4 @@
-.aboutColumns {
+.columns {
   grid-template-columns: 2fr 1.5fr 1fr 1fr;
 
   @media (width < 64rem) {
