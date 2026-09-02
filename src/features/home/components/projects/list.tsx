@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { buildFileUrl, client, urlFor } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
-import { ProjectModal } from './project-modal'
-import { ProjectText } from './project-text'
-import { ProjectThumbnail } from './project-thumbnail'
-import { ProjectsItem } from './projects-item'
+import { Item } from './item'
+import { Modal } from './modal'
+import { Text } from './text'
+import { Thumbnail } from './thumbnail'
 
 type ProjectProps = {
   title: string
@@ -48,17 +48,17 @@ async function getProjects() {
   return projects
 }
 
-export async function ProjectsList() {
+export async function List() {
   const projects: ProjectProps[] = await getProjects()
 
   return (
     <ul className='flex flex-col gap-5 md:gap-10 mx-auto max-w-360' aria-label='Projetos'>
       {projects.map(project => (
-        <ProjectsItem
+        <Item
           url={project.currentSlug}
           label={project.title}
           modal={
-            <ProjectModal
+            <Modal
               image={urlFor(project.image)}
               id={project.currentSlug}
               title={project.title}
@@ -67,12 +67,12 @@ export async function ProjectsList() {
           }
           key={project.currentSlug}
         >
-          <ProjectText title={project.title} />
-          <ProjectThumbnail
+          <Text title={project.title} />
+          <Thumbnail
             url={urlFor(project.image)}
             description={`${project.title} - imagem de apresentação`}
           />
-        </ProjectsItem>
+        </Item>
       ))}
     </ul>
   )

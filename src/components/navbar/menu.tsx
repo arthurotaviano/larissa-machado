@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './navbar-menu.module.css'
+import styles from './menu.module.css'
 
 type MenuProps = {
   isOpen: boolean
@@ -11,7 +11,7 @@ const links = [
   { label: 'Sobre', href: '/#section-about' },
 ]
 
-export function NavbarMenu({ isOpen, onClose }: MenuProps) {
+export function Menu({ isOpen, onClose }: MenuProps) {
   return (
     <ul
       className={`absolute top-20 md:top-25 right-0 left-0 flex flex-col justify-center px-5 w-full h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] bg-neutral-950 text-center ${styles.navbarMenu}`}

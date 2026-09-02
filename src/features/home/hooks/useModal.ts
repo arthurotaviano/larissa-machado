@@ -11,7 +11,7 @@ const FOCUSABLE_SELECTORS = [
   '[tabindex]:not([tabindex="-1"])',
 ].join(', ')
 
-export function useProjectModal() {
+export function useModal() {
   const triggerRef = useRef<HTMLAnchorElement | null>(null)
   const containerRef = useRef<HTMLLIElement | null>(null)
 

@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { urlFor } from '@/lib/sanity'
-import styles from './about-logos.module.css'
+import styles from './logos.module.css'
 
 type ClientProps = {
   name: string
   logo: any
 }
 
-export function AboutLogos({ clients }: { clients: ClientProps[] }) {
+export function Logos({ clients }: { clients: ClientProps[] }) {
   return (
     <div className={`mt-5 md:mt-10 ${styles.aboutLogos}`}>
       <h3 className='sr-only'>Alguns Clientes</h3>

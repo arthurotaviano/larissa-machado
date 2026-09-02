@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { NavbarLogo } from './navbar-logo'
-import { NavbarMenu } from './navbar-menu'
-import { NavbarMenuTrigger } from './navbar-menu-trigger'
-import styles from './navbar-menu.module.css'
+import { Logo } from './logo'
+import { Menu } from './menu'
+import { MenuTrigger } from './menu-trigger'
+import styles from './menu.module.css'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -48,7 +48,9 @@ export function Navbar() {
 
   // Handle inert
   useEffect(() => {
-    const backgroundElements = Array.from(document.getElementById('app')!.children).filter(el => el.id !== 'navbar') as HTMLElement[]
+    const backgroundElements = Array.from(document.getElementById('app')!.children).filter(
+      el => el.id !== 'navbar'
+    ) as HTMLElement[]
 
     backgroundElements.forEach(el => {
       if (isOpen) {
@@ -86,11 +88,24 @@ export function Navbar() {
 
   return (
     <>
-      <nav className={['absolute top-0 right-0 left-0 z-9999 h-20 md:h-25 bg-neutral-950 text-white', isOpen && styles.menuOpen, animating && styles.navbarAnimating].filter(Boolean).join(' ')} id='navbar' aria-label='Navegação'>
-        <div className='relative mx-auto px-5' {...(isOpen && { role: 'dialog', 'aria-modal': true, 'aria-label': 'Menu' })}>
-          <NavbarLogo isOpen={isOpen} />
-          <NavbarMenu isOpen={isOpen} onClose={closeMenu} />
-          <NavbarMenuTrigger onToggle={handleMenuToggle} isOpen={isOpen} />
+      <nav
+        className={[
+          'absolute top-0 right-0 left-0 z-9999 h-20 md:h-25 bg-neutral-950 text-white',
+          isOpen && styles.menuOpen,
+          animating && styles.navbarAnimating,
+        ]
+          .filter(Boolean)
+          .join(' ')}
+        id='navbar'
+        aria-label='Navegação'
+      >
+        <div
+          className='relative mx-auto px-5'
+          {...(isOpen && { role: 'dialog', 'aria-modal': true, 'aria-label': 'Menu' })}
+        >
+          <Logo isOpen={isOpen} />
+          <Menu isOpen={isOpen} onClose={closeMenu} />
+          <MenuTrigger onToggle={handleMenuToggle} isOpen={isOpen} />
         </div>
       </nav>
       <div className='h-20 md:h-25'></div>
