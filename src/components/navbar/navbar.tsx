@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavbarLogo } from './navbar-logo'
 import { NavbarMenu } from './navbar-menu'
-import { NavbarMenuTrigger } from './navbar-menu-trigger'
-import styles from './navbar-menu.module.css'
+import { NavbarMenuTrigger } from './navbar-menu-trigger/navbar-menu-trigger'
+import styles from './navbar.module.css'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,8 +42,8 @@ export function Navbar() {
 
   // Handle noscroll
   useEffect(() => {
-    document.documentElement.classList.toggle(styles.navbarNoscroll, isOpen)
-    return () => document.documentElement.classList.remove(styles.navbarNoscroll)
+    document.documentElement.classList.toggle(styles.noscroll, isOpen)
+    return () => document.documentElement.classList.remove(styles.noscroll)
   }, [isOpen])
 
   // Handle inert
@@ -92,7 +92,7 @@ export function Navbar() {
         className={[
           'absolute top-0 right-0 left-0 z-9999 h-20 md:h-25 bg-neutral-950 text-white',
           isOpen && styles.menuOpen,
-          animating && styles.navbarAnimating,
+          animating && styles.animating,
         ]
           .filter(Boolean)
           .join(' ')}

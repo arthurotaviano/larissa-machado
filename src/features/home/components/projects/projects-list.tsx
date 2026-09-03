@@ -3,9 +3,9 @@
 import { buildFileUrl, client, urlFor } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
 import { ProjectsItem } from './projects-item'
-import { ProjectsModal } from './projects-modal'
-import { ProjectsText } from './projects-text'
-import { ProjectsThumbnail } from './projects-thumbnail'
+import { ProjectsModal } from './projects-modal/projects-modal'
+import { ProjectsText } from './projects-text/projects-text'
+import { ProjectsThumbnail } from './projects-thumbnail/projects-thumbnail'
 
 type ProjectsProjectProps = {
   title: string

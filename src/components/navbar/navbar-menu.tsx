@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './navbar-menu.module.css'
+import styles from './navbar.module.css'
 
 type NavbarMenuProps = {
   isOpen: boolean

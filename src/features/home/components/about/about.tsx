@@ -6,7 +6,7 @@ import { AboutExperience } from './about-experience'
 import { AboutImage } from './about-image'
 import { AboutLinkedInButton } from './about-linkedin-button'
 import { AboutLogo } from './about-logo'
-import { AboutLogos } from './about-logos'
+import { AboutLogos } from './about-logos/about-logos'
 import { AboutText } from './about-text'
 import styles from './about.module.css'
 
